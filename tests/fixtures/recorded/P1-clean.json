@@ -1,0 +1,131 @@
+{
+  "loss_runs.pdf": {
+    "document_type": "loss_runs",
+    "document_type_excerpt": "Loss Run Report",
+    "fields": {
+      "business_name": {
+        "value": "Example Harbor Bakery LLC",
+        "excerpt": "Named insured: Example Harbor Bakery LLC"
+      },
+      "requested_effective_date": {
+        "value": null,
+        "excerpt": null
+      },
+      "property_state": {
+        "value": null,
+        "excerpt": null
+      },
+      "occupancy_description": {
+        "value": null,
+        "excerpt": null
+      },
+      "declared_location_count": {
+        "value": null,
+        "excerpt": null
+      },
+      "total_insured_value": {
+        "value": null,
+        "excerpt": null
+      },
+      "sprinklered": {
+        "value": null,
+        "excerpt": null
+      },
+      "year_built": {
+        "value": null,
+        "excerpt": null
+      },
+      "loss_history_years": {
+        "value": "5 policy years",
+        "excerpt": "Experience period: 5 policy years (2022 to 2026)"
+      }
+    }
+  },
+  "broker_email.txt": {
+    "document_type": "broker_email",
+    "document_type_excerpt": "From: Dana Reyes <dana.reyes@example.com>\nTo: underwriting@example.com\nSubject: New property submission: Example Harbor Bakery LLC",
+    "fields": {
+      "business_name": {
+        "value": "Example Harbor Bakery LLC",
+        "excerpt": "Please find attached a new commercial property submission for Example Harbor Bakery LLC."
+      },
+      "requested_effective_date": {
+        "value": "January 1, 2027",
+        "excerpt": "Requested effective date: January 1, 2027."
+      },
+      "property_state": {
+        "value": "Ohio",
+        "excerpt": "operating from 3 locations in Ohio"
+      },
+      "occupancy_description": {
+        "value": "commercial bakery with retail storefronts",
+        "excerpt": "The insured is a commercial bakery with retail storefronts"
+      },
+      "declared_location_count": {
+        "value": "3",
+        "excerpt": "operating from 3 locations in Ohio"
+      },
+      "total_insured_value": {
+        "value": "$8,400,000",
+        "excerpt": "Total insured value: $8,400,000."
+      },
+      "sprinklered": {
+        "value": "fully sprinklered",
+        "excerpt": "All buildings are fully sprinklered."
+      },
+      "year_built": {
+        "value": null,
+        "excerpt": null
+      },
+      "loss_history_years": {
+        "value": null,
+        "excerpt": null
+      }
+    }
+  },
+  "application.pdf": {
+    "document_type": "application",
+    "document_type_excerpt": "Commercial Property Application",
+    "fields": {
+      "business_name": {
+        "value": "Example Harbor Bakery LLC",
+        "excerpt": "Applicant name: Example Harbor Bakery LLC"
+      },
+      "requested_effective_date": {
+        "value": "01/01/2027",
+        "excerpt": "Requested effective date: 01/01/2027"
+      },
+      "property_state": {
+        "value": "Ohio",
+        "excerpt": "Primary state: Ohio"
+      },
+      "occupancy_description": {
+        "value": "Commercial bakery with retail storefronts",
+        "excerpt": "Occupancy: Commercial bakery with retail storefronts"
+      },
+      "declared_location_count": {
+        "value": "3",
+        "excerpt": "Number of locations: 3"
+      },
+      "total_insured_value": {
+        "value": "$8,400,000",
+        "excerpt": "Total insured value (all locations): $8,400,000"
+      },
+      "sprinklered": {
+        "value": "Yes",
+        "excerpt": "Automatic sprinkler system (Yes/No): Yes"
+      },
+      "year_built": {
+        "value": "1998",
+        "excerpt": "Year built (main building): 1998"
+      },
+      "loss_history_years": {
+        "value": null,
+        "excerpt": null
+      }
+    }
+  },
+  "summary": {
+    "summary": "Example Harbor Bakery LLC is applying for commercial property coverage for a commercial bakery with retail storefronts in OH, with a requested effective date of 2027-01-01. The submission includes application.pdf, broker_email.txt, locations.csv and loss_runs.pdf, which list 3 locations, a total insured value of $8,400,000, sprinklered buildings and a year built of 1998. All five rule checks passed: the applicant and effective date are consistent, the declared 3 locations match the schedule, the total insured value is within the $10,000,000 authority, the buildings are stated to be sprinklered, and the loss runs cover 5 years against the 3 required. No checks were flagged and no fields were corrected by a reviewer. The overall status is READY_FOR_REVIEW, which means only that the submission is ready for human review."
+  }
+}

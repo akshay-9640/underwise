@@ -1,0 +1,89 @@
+{
+  "broker_email.txt": {
+    "document_type": "broker_email",
+    "document_type_excerpt": "Subject: Submission: Example Northfield Storage Inc",
+    "fields": {
+      "business_name": {
+        "value": "Example Northfield Storage Inc",
+        "excerpt": "Attached is the application and location schedule for Example Northfield Storage Inc"
+      },
+      "requested_effective_date": {
+        "value": null,
+        "excerpt": "The insured is still deciding on a start date, so the effective date is to be confirmed."
+      },
+      "property_state": {
+        "value": "Michigan",
+        "excerpt": "which rents self-storage warehouse units in Michigan"
+      },
+      "occupancy_description": {
+        "value": "rents self-storage warehouse units",
+        "excerpt": "which rents self-storage warehouse units in Michigan"
+      },
+      "declared_location_count": {
+        "value": null,
+        "excerpt": null
+      },
+      "total_insured_value": {
+        "value": null,
+        "excerpt": null
+      },
+      "sprinklered": {
+        "value": null,
+        "excerpt": null
+      },
+      "year_built": {
+        "value": null,
+        "excerpt": null
+      },
+      "loss_history_years": {
+        "value": null,
+        "excerpt": null
+      }
+    }
+  },
+  "application.pdf": {
+    "document_type": "application",
+    "document_type_excerpt": "Commercial Property Application",
+    "fields": {
+      "business_name": {
+        "value": "Example Northfield Storage Inc",
+        "excerpt": "Applicant name: Example Northfield Storage Inc"
+      },
+      "requested_effective_date": {
+        "value": null,
+        "excerpt": "Requested effective date: To be confirmed"
+      },
+      "property_state": {
+        "value": "Michigan",
+        "excerpt": "Primary state: Michigan"
+      },
+      "occupancy_description": {
+        "value": "Self-storage warehouse units",
+        "excerpt": "Occupancy: Self-storage warehouse units"
+      },
+      "declared_location_count": {
+        "value": "2",
+        "excerpt": "Number of locations: 2"
+      },
+      "total_insured_value": {
+        "value": "$4,250,000",
+        "excerpt": "Total insured value (all locations): $4,250,000"
+      },
+      "sprinklered": {
+        "value": null,
+        "excerpt": "Automatic sprinkler system (Yes/No):"
+      },
+      "year_built": {
+        "value": "1987",
+        "excerpt": "Year built (main building): 1987"
+      },
+      "loss_history_years": {
+        "value": null,
+        "excerpt": null
+      }
+    }
+  },
+  "summary": {
+    "summary": "Example Northfield Storage Inc is applying for commercial property coverage for self-storage warehouse units in MI, with 2 declared locations, a total insured value of $4,250,000, and a year built of 1987. The submission includes application.pdf, broker_email.txt and locations.csv. Two checks passed: the declared location count of 2 matches the 2 locations on the schedule, and the total insured value is within the $10,000,000 authority. The underwriter should look at three items: the requested effective date is missing, sprinkler protection could not be assessed because the sprinklered field is missing, and no loss runs report is attached (a promise in the email does not count). The overall status is NEEDS_REVIEW, which means the submission is ready for human review only."
+  }
+}

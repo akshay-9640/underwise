@@ -1,0 +1,6 @@
+location_id,address,city,state,zip,construction
+L1,1 Example Plaza,Newark,NJ,07102,Fire resistive
+L2,77 Sample Ln,Trenton,NJ,08608,Masonry noncombustible
+L3,300 Demo Ct,Camden,NJ,08102,Joisted masonry
+L4,12 Placeholder Way,Hoboken,NJ,07030,Fire resistive
+L5,8 Fictional Dr,Princeton,NJ,08540,Frame

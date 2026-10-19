@@ -1,0 +1,131 @@
+{
+  "application.pdf": {
+    "document_type": "application",
+    "document_type_excerpt": "Commercial Property Application",
+    "fields": {
+      "business_name": {
+        "value": "Example Riverside Dental Group PC",
+        "excerpt": "Applicant name: Example Riverside Dental Group PC"
+      },
+      "requested_effective_date": {
+        "value": "02/01/2027",
+        "excerpt": "Requested effective date: 02/01/2027"
+      },
+      "property_state": {
+        "value": "NJ",
+        "excerpt": "Primary state: NJ"
+      },
+      "occupancy_description": {
+        "value": "Dental offices",
+        "excerpt": "Occupancy: Dental offices"
+      },
+      "declared_location_count": {
+        "value": "4",
+        "excerpt": "Number of locations: 4"
+      },
+      "total_insured_value": {
+        "value": "$11,200,000",
+        "excerpt": "Total insured value (all locations): $11,200,000"
+      },
+      "sprinklered": {
+        "value": "No",
+        "excerpt": "Automatic sprinkler system (Yes/No): No"
+      },
+      "year_built": {
+        "value": "2004",
+        "excerpt": "Year built (main building): 2004"
+      },
+      "loss_history_years": {
+        "value": null,
+        "excerpt": null
+      }
+    }
+  },
+  "loss_runs.pdf": {
+    "document_type": "loss_runs",
+    "document_type_excerpt": "Loss Run Report",
+    "fields": {
+      "business_name": {
+        "value": "Example Riverside Dental Group PC",
+        "excerpt": "Named insured: Example Riverside Dental Group PC"
+      },
+      "requested_effective_date": {
+        "value": null,
+        "excerpt": null
+      },
+      "property_state": {
+        "value": null,
+        "excerpt": null
+      },
+      "occupancy_description": {
+        "value": null,
+        "excerpt": null
+      },
+      "declared_location_count": {
+        "value": null,
+        "excerpt": null
+      },
+      "total_insured_value": {
+        "value": null,
+        "excerpt": null
+      },
+      "sprinklered": {
+        "value": null,
+        "excerpt": null
+      },
+      "year_built": {
+        "value": null,
+        "excerpt": null
+      },
+      "loss_history_years": {
+        "value": "2 policy years",
+        "excerpt": "Experience period: 2 policy years (2025 to 2026)"
+      }
+    }
+  },
+  "broker_email.txt": {
+    "document_type": "broker_email",
+    "document_type_excerpt": "From: Lee Morgan <lee.morgan@example.com>\nTo: underwriting@example.com",
+    "fields": {
+      "business_name": {
+        "value": "Example Riverside Dental Group PC",
+        "excerpt": "We are marketing the property program for Example Riverside Dental Group PC, effective 2027-02-01."
+      },
+      "requested_effective_date": {
+        "value": "2027-02-01",
+        "excerpt": "Example Riverside Dental Group PC, effective 2027-02-01."
+      },
+      "property_state": {
+        "value": "New Jersey",
+        "excerpt": "The group runs dental offices at 4 locations in New Jersey"
+      },
+      "occupancy_description": {
+        "value": "dental offices",
+        "excerpt": "The group runs dental offices at 4 locations in New Jersey"
+      },
+      "declared_location_count": {
+        "value": "4",
+        "excerpt": "dental offices at 4 locations in New Jersey"
+      },
+      "total_insured_value": {
+        "value": "$9,800,000",
+        "excerpt": "with a total insured value of $9,800,000."
+      },
+      "sprinklered": {
+        "value": "sprinklered",
+        "excerpt": "All four offices are sprinklered."
+      },
+      "year_built": {
+        "value": null,
+        "excerpt": null
+      },
+      "loss_history_years": {
+        "value": null,
+        "excerpt": null
+      }
+    }
+  },
+  "summary": {
+    "summary": "Example Riverside Dental Group PC is applying for commercial property coverage for its dental offices in NJ, with a requested effective date of 2027-02-01. The submission includes application.pdf, broker_email.txt, locations.csv and loss_runs.pdf. The applicant and effective date check passed. The underwriter should look at two flags: the application declares 4 locations but the schedule lists 5, and the loss runs cover only 2 years when at least 3 are required. The total insured value and sprinkler checks could not be completed because the sources conflict: application.pdf shows $11,200,000 and no sprinklers, while broker_email.txt shows $9,800,000 and says the property is sprinklered, so the overall status is NEEDS_REVIEW for human review."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "scenario": "Fictional commercial property submissions. Not an insurer's real underwriting guidelines.",
+  "statuses": ["PASS", "FLAG", "UNKNOWN"],
+  "overall_status": "NEEDS_REVIEW if any rule is FLAG or UNKNOWN; otherwise READY_FOR_REVIEW. Neither status is a coverage, pricing or binding decision.",
+  "rules": [
+    {
+      "id": "R1",
+      "name": "Applicant and effective date",
+      "inputs": ["business_name", "requested_effective_date"],
+      "pass": "Both values are present, valid and consistent across sources.",
+      "flag": "At least one value is absent.",
+      "unknown": "Nothing is absent, but a value is invalid or the sources disagree.",
+      "precedence": "An absent value (FLAG) wins over an unresolved one (UNKNOWN)."
+    },
+    {
+      "id": "R2",
+      "name": "Location count matches the schedule",
+      "inputs": ["declared_location_count", "schedule_location_count"],
+      "pass": "Both counts are valid whole numbers and equal.",
+      "flag": "Both counts are valid whole numbers and differ.",
+      "unknown": "Either count is absent, invalid or conflicting, or the locations CSV cannot be read."
+    },
+    {
+      "id": "R3",
+      "name": "Total insured value within authority",
+      "inputs": ["total_insured_value"],
+      "pass": "A valid, consistent TIV is at or below the threshold.",
+      "flag": "A valid, consistent TIV is above the threshold and needs a senior referral.",
+      "unknown": "TIV is absent, conflicting, negative or not a dollar amount.",
+      "threshold_usd": 10000000,
+      "operator": "greater_than"
+    },
+    {
+      "id": "R4",
+      "name": "Sprinkler protection",
+      "inputs": ["sprinklered"],
+      "pass": "The applicant explicitly answers Yes.",
+      "flag": "The applicant explicitly answers No.",
+      "unknown": "The answer is absent, ambiguous or conflicting. Silence is not No."
+    },
+    {
+      "id": "R5",
+      "name": "Loss history",
+      "inputs": ["loss_runs_present", "loss_history_years"],
+      "pass": "A readable loss runs report is attached and states at least the minimum years of history.",
+      "flag": "No loss runs report is attached (a promise in the email does not count), or the attached report covers fewer than the minimum years.",
+      "unknown": "A possible loss runs attachment is unreadable or its type cannot be determined, or the years covered are not stated clearly.",
+      "min_years": 3
+    }
+  ]
+}

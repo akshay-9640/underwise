@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "fields": [
+    {"name": "business_name", "type": "string", "source": "email, application", "normalization": "Trim whitespace; names compare case-insensitively."},
+    {"name": "requested_effective_date", "type": "YYYY-MM-DD or null", "source": "email, application", "normalization": "Any valid calendar date."},
+    {"name": "property_state", "type": "two-letter code or null", "source": "email, application", "normalization": "Ohio and OH both become OH."},
+    {"name": "occupancy_description", "type": "string or null", "source": "email, application", "normalization": "Kept as written; no rule uses it."},
+    {"name": "declared_location_count", "type": "integer or null", "source": "email, application", "normalization": "The count the applicant states, never one the model computes."},
+    {"name": "total_insured_value", "type": "number (USD) or null", "source": "email, application", "normalization": "$8,400,000, 8.4 million and $8.4M are all 8400000."},
+    {"name": "sprinklered", "type": "boolean or null", "source": "email, application", "normalization": "Explicit Yes or No only; absence is not No."},
+    {"name": "year_built", "type": "integer or null", "source": "email, application", "normalization": "A four-digit year; no rule uses it."},
+    {"name": "loss_history_years", "type": "integer or null", "source": "loss runs report", "normalization": "The number of years of history the report states."},
+    {"name": "loss_runs_present", "type": "boolean or null", "source": "code: attachment inventory", "normalization": "True only when a readable attachment is itself a loss runs report."},
+    {"name": "schedule_location_count", "type": "integer or null", "source": "code: locations.csv", "normalization": "Nonblank data rows after the header."}
+  ],
+  "field_states": ["KNOWN", "MISSING", "CONFLICT", "INVALID", "NOT_EXTRACTED"],
+  "evidence": "Every extracted value carries a verbatim excerpt that code finds on the stated page. Values derived in code carry an observation instead. Absence lists the sources inspected and never invents a quote.",
+  "conflicts": "When sources state different normalized values, all are kept with their evidence, the value is null, and no source is preferred. A reviewer resolves it with a correction.",
+  "csv": "Header location_id,address,city,state,zip,construction. Count nonblank data rows after the header.",
+  "corrections": "A reviewer's correction becomes the value the rules use, marked as a human override. The original value, state and evidence stay visible."
+}

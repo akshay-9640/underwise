@@ -1,0 +1,29 @@
+[project]
+name = "underwise"
+version = "0.1.0"
+description = "Commercial property submission review: evidence-backed extraction, five deterministic checks, AI summary and a draft follow-up email."
+readme = "README.md"
+authors = [
+    { name = "akshay-9640", email = "67995033+akshay-9640@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.143.3",
+    "pypdf>=6.21.1",
+    "python-multipart>=0.0.32",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+underwise = "underwise.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "fpdf2>=2.8.9",
+    "httpx2>=2.13.1",
+    "pytest>=9.1.1",
+]

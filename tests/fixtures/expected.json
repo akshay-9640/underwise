@@ -1,0 +1,230 @@
+{
+  "P1-clean": {
+    "fields": {
+      "business_name": {
+        "state": "KNOWN",
+        "value": "Example Harbor Bakery LLC"
+      },
+      "requested_effective_date": {
+        "state": "KNOWN",
+        "value": "2027-01-01"
+      },
+      "property_state": {
+        "state": "KNOWN",
+        "value": "OH"
+      },
+      "occupancy_description": {
+        "state": "KNOWN"
+      },
+      "declared_location_count": {
+        "state": "KNOWN",
+        "value": 3
+      },
+      "total_insured_value": {
+        "state": "KNOWN",
+        "value": 8400000
+      },
+      "sprinklered": {
+        "state": "KNOWN",
+        "value": true
+      },
+      "year_built": {
+        "state": "KNOWN",
+        "value": 1998
+      },
+      "loss_history_years": {
+        "state": "KNOWN",
+        "value": 5
+      },
+      "loss_runs_present": {
+        "state": "KNOWN",
+        "value": true
+      },
+      "schedule_location_count": {
+        "state": "KNOWN",
+        "value": 3
+      }
+    },
+    "rules": {
+      "R1": "PASS",
+      "R2": "PASS",
+      "R3": "PASS",
+      "R4": "PASS",
+      "R5": "PASS"
+    },
+    "overall": "READY_FOR_REVIEW"
+  },
+  "P2-missing-info": {
+    "fields": {
+      "business_name": {
+        "state": "KNOWN",
+        "value": "Example Northfield Storage Inc"
+      },
+      "requested_effective_date": {
+        "state": "MISSING",
+        "value": null
+      },
+      "property_state": {
+        "state": "KNOWN",
+        "value": "MI"
+      },
+      "occupancy_description": {
+        "state": "KNOWN"
+      },
+      "declared_location_count": {
+        "state": "KNOWN",
+        "value": 2
+      },
+      "total_insured_value": {
+        "state": "KNOWN",
+        "value": 4250000
+      },
+      "sprinklered": {
+        "state": "MISSING",
+        "value": null
+      },
+      "year_built": {
+        "state": "KNOWN",
+        "value": 1987
+      },
+      "loss_history_years": {
+        "state": "MISSING",
+        "value": null
+      },
+      "loss_runs_present": {
+        "state": "KNOWN",
+        "value": false
+      },
+      "schedule_location_count": {
+        "state": "KNOWN",
+        "value": 2
+      }
+    },
+    "rules": {
+      "R1": "FLAG",
+      "R2": "PASS",
+      "R3": "PASS",
+      "R4": "UNKNOWN",
+      "R5": "FLAG"
+    },
+    "overall": "NEEDS_REVIEW"
+  },
+  "P3-conflicts": {
+    "fields": {
+      "business_name": {
+        "state": "KNOWN",
+        "value": "Example Riverside Dental Group PC"
+      },
+      "requested_effective_date": {
+        "state": "KNOWN",
+        "value": "2027-02-01"
+      },
+      "property_state": {
+        "state": "KNOWN",
+        "value": "NJ"
+      },
+      "occupancy_description": {
+        "state": "KNOWN"
+      },
+      "declared_location_count": {
+        "state": "KNOWN",
+        "value": 4
+      },
+      "total_insured_value": {
+        "state": "CONFLICT",
+        "value": null,
+        "alternatives": [
+          "11200000",
+          "9800000"
+        ]
+      },
+      "sprinklered": {
+        "state": "CONFLICT",
+        "value": null,
+        "alternatives": [
+          "False",
+          "True"
+        ]
+      },
+      "year_built": {
+        "state": "KNOWN",
+        "value": 2004
+      },
+      "loss_history_years": {
+        "state": "KNOWN",
+        "value": 2
+      },
+      "loss_runs_present": {
+        "state": "KNOWN",
+        "value": true
+      },
+      "schedule_location_count": {
+        "state": "KNOWN",
+        "value": 5
+      }
+    },
+    "rules": {
+      "R1": "PASS",
+      "R2": "FLAG",
+      "R3": "UNKNOWN",
+      "R4": "UNKNOWN",
+      "R5": "FLAG"
+    },
+    "overall": "NEEDS_REVIEW"
+  },
+  "P4-edge-cases": {
+    "fields": {
+      "business_name": {
+        "state": "KNOWN",
+        "value": "Example Summit Print Works Inc"
+      },
+      "requested_effective_date": {
+        "state": "KNOWN",
+        "value": "2027-03-15"
+      },
+      "property_state": {
+        "state": "KNOWN",
+        "value": "PA"
+      },
+      "occupancy_description": {
+        "state": "KNOWN"
+      },
+      "declared_location_count": {
+        "state": "KNOWN",
+        "value": 1
+      },
+      "total_insured_value": {
+        "state": "KNOWN",
+        "value": 10000000
+      },
+      "sprinklered": {
+        "state": "KNOWN",
+        "value": false
+      },
+      "year_built": {
+        "state": "KNOWN",
+        "value": 1962
+      },
+      "loss_history_years": {
+        "state": "MISSING",
+        "value": null
+      },
+      "loss_runs_present": {
+        "state": "INVALID",
+        "value": null
+      },
+      "schedule_location_count": {
+        "state": "KNOWN",
+        "value": 1
+      }
+    },
+    "rules": {
+      "R1": "PASS",
+      "R2": "PASS",
+      "R3": "PASS",
+      "R4": "FLAG",
+      "R5": "UNKNOWN"
+    },
+    "overall": "NEEDS_REVIEW"
+  }
+}
