@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Underwise</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-row">
+      <div class="brand"><span class="mark" aria-hidden="true">U</span><span class="name">Underwise</span><span class="tag">Commercial property</span></div>
+      <span class="model" id="model" role="status"></span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Start: empty screen with upload or paste -->
+    <section id="start" class="start" aria-labelledby="start-title">
+      <h1 id="start-title">Submission review, with the evidence</h1>
+      <p class="lede">Pick a fictional packet to see its real recorded review: every value carries a quote verified in code, and five checks run in code, not in the model.</p>
+      <div id="picker" class="picker"></div>
+      <p class="hint demo-note">This page replays recorded output from Claude Opus 5.5. Uploads, corrections and free-form questions run in the local app: <a href="https://github.com/akshay-9640/underwise">see the code on GitHub</a>.</p>
+      <form id="upload" class="card" hidden>
+        <label class="drop" id="drop">
+          <input type="file" id="files" multiple accept=".txt,.eml,.pdf,.csv">
+          <span class="drop-title">Choose files or drop them here</span>
+          <span class="drop-sub">.txt or .eml email, .pdf documents, one .csv locations schedule</span>
+        </label>
+        <ul class="file-list" id="file-list" aria-label="Selected files"></ul>
+        <details class="paste" id="paste">
+          <summary>Or paste the broker email</summary>
+          <label for="email-text" class="sr">Broker email text</label>
+          <textarea id="email-text" rows="8" placeholder="Paste the broker email here"></textarea>
+        </details>
+        <p class="error" id="upload-error" role="alert" hidden></p>
+        <div class="row-end"><button type="submit" class="btn" id="process-btn" disabled aria-describedby="process-hint">Process packet</button></div>
+        <p class="hint" id="process-hint">Add the packet's files or paste the broker email to continue.</p>
+      </form>
+    </section>
+
+    <!-- Processing -->
+    <section id="busy" class="card busy" hidden aria-live="polite">
+      <span class="dot" aria-hidden="true"></span>
+      <div>
+        <p class="busy-title" id="busy-title">Processing packet</p>
+        <p class="busy-sub"><span id="busy-detail">Reading documents, extracting fields with the model, then checking the rules.</span> <span id="elapsed"></span></p>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="result" hidden></section>
+  </main>
+
+  <footer class="wrap foot">
+    <p id="model-foot"></p>
+    <p>Fictional exercise data. Statuses show readiness for human review only, never a coverage, pricing or binding decision. Nothing is ever emailed.</p>
+  </footer>
+</body>
+</html>

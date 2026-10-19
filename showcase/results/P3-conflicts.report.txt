@@ -1,0 +1,70 @@
+# Submission review P3-conflicts
+
+**Overall: NEEDS_REVIEW**. Readiness for human review only. This is not a coverage, pricing or binding decision.
+
+Model: claude-code: claude-opus-5-5. Extraction: OK.
+
+## Rules
+
+- **R1 Applicant and effective date: PASS**. Business name and requested effective date are present, valid and consistent.
+- **R2 Location count matches the schedule: FLAG**. Declared count 4 differs from the 5 locations on the schedule.
+- **R3 Total insured value within authority: UNKNOWN**. Total insured value conflicts between sources ($11,200,000 in application.pdf, $9,800,000 in broker_email.txt).
+- **R4 Sprinkler protection: UNKNOWN**. Sprinklered conflicts between sources (No in application.pdf, sprinklered in broker_email.txt).
+- **R5 Loss history: FLAG**. The loss runs report covers 2 years; at least 3 are required.
+
+## Fields
+
+- **business_name**: Example Riverside Dental Group PC
+  - application.pdf, PDF page 1: "Applicant name: Example Riverside Dental Group PC"
+  - broker_email.txt, email body: "We are marketing the property program for Example Riverside Dental Group PC, effective 2027-02-01."
+- **requested_effective_date**: 2027-02-01
+  - application.pdf, PDF page 1: "Requested effective date: 02/01/2027"
+  - broker_email.txt, email body: "Example Riverside Dental Group PC, effective 2027-02-01."
+- **property_state**: NJ
+  - application.pdf, PDF page 1: "Primary state: NJ"
+  - broker_email.txt, email body: "The group runs dental offices at 4 locations in New Jersey"
+- **occupancy_description**: Dental offices
+  - application.pdf, PDF page 1: "Occupancy: Dental offices"
+  - broker_email.txt, email body: "The group runs dental offices at 4 locations in New Jersey"
+- **declared_location_count**: 4
+  - application.pdf, PDF page 1: "Number of locations: 4"
+  - broker_email.txt, email body: "dental offices at 4 locations in New Jersey"
+- **total_insured_value**: CONFLICT
+  - '$11,200,000' in application.pdf, PDF page 1: "Total insured value (all locations): $11,200,000"
+  - '$9,800,000' in broker_email.txt, email body: "with a total insured value of $9,800,000."
+  - Note: Sources state different values. No source is preferred; a reviewer must correct it.
+- **sprinklered**: CONFLICT
+  - 'No' in application.pdf, PDF page 2: "Automatic sprinkler system (Yes/No): No"
+  - 'sprinklered' in broker_email.txt, email body: "All four offices are sprinklered."
+  - Note: Sources state different values. No source is preferred; a reviewer must correct it.
+- **year_built**: 2004
+  - application.pdf, PDF page 2: "Year built (main building): 2004"
+- **loss_history_years**: 2
+  - loss_runs.pdf, PDF page 1: "Experience period: 2 policy years (2025 to 2026)"
+- **loss_runs_present**: True
+  - loss_runs.pdf, PDF page 1: "Loss Run Report"
+  - application.pdf, broker_email.txt, locations.csv, loss_runs.pdf, uploaded attachment inventory: Attachments: application.pdf (application); broker_email.txt (email); locations.csv (csv); loss_runs.pdf (loss_runs)
+- **schedule_location_count**: 5
+  - locations.csv, CSV data rows 1-5 (header excluded): 5 nonblank data rows after the header location_id,address,city,state,zip,construction; location_ids L1, L2, L3, L4, L5
+
+## Underwriter summary (AI)
+
+Example Riverside Dental Group PC is applying for commercial property coverage for its dental offices in NJ, with a requested effective date of 2027-02-01. The submission includes application.pdf, broker_email.txt, locations.csv and loss_runs.pdf. The applicant and effective date check passed. The underwriter should look at two flags: the application declares 4 locations but the schedule lists 5, and the loss runs cover only 2 years when at least 3 are required. The total insured value and sprinkler checks could not be completed because the sources conflict: application.pdf shows $11,200,000 and no sprinklers, while broker_email.txt shows $9,800,000 and says the property is sprinklered, so the overall status is NEEDS_REVIEW for human review.
+
+## Draft follow-up email (not sent)
+
+To: Lee Morgan <lee.morgan@example.com>
+Subject: Re: Renewal marketing: Example Riverside Dental Group PC
+
+Hello,
+
+Thank you for the commercial property submission for Example Riverside Dental Group PC. Before we can continue our review, please help with the following:
+
+1. The submission declares 4 locations, but the locations schedule lists 5. Please confirm the number of locations and send an updated schedule if needed.
+2. Please confirm the total insured value: the application (application.pdf) states $11,200,000 and the broker email states $9,800,000.
+3. Please confirm the sprinkler answer: the application (application.pdf) states No and the broker email states sprinklered.
+4. The loss runs report covers 2 years. Please send loss runs covering at least the last 3 years.
+
+Thank you,
+[Your name]
+Underwriting

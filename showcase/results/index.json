@@ -1,0 +1,54 @@
+[
+  {
+    "id": "P1-clean",
+    "business": "Example Harbor Bakery LLC",
+    "tests": "Everything consistent, with 5 years of loss runs.",
+    "overall": "READY_FOR_REVIEW",
+    "rules": {
+      "R1": "PASS",
+      "R2": "PASS",
+      "R3": "PASS",
+      "R4": "PASS",
+      "R5": "PASS"
+    }
+  },
+  {
+    "id": "P2-missing-info",
+    "business": "Example Northfield Storage Inc",
+    "tests": "Effective date to be confirmed, sprinkler answer blank, loss runs promised but not attached.",
+    "overall": "NEEDS_REVIEW",
+    "rules": {
+      "R1": "FLAG",
+      "R2": "PASS",
+      "R3": "PASS",
+      "R4": "UNKNOWN",
+      "R5": "FLAG"
+    }
+  },
+  {
+    "id": "P3-conflicts",
+    "business": "Example Riverside Dental Group PC",
+    "tests": "Email and application disagree on TIV and sprinklers; 5 locations on the schedule vs 4 declared.",
+    "overall": "NEEDS_REVIEW",
+    "rules": {
+      "R1": "PASS",
+      "R2": "FLAG",
+      "R3": "UNKNOWN",
+      "R4": "UNKNOWN",
+      "R5": "FLAG"
+    }
+  },
+  {
+    "id": "P4-edge-cases",
+    "business": "Example Summit Print Works Inc",
+    "tests": "TIV exactly at the $10M threshold, a scanned loss runs PDF, and an instruction planted in the email.",
+    "overall": "NEEDS_REVIEW",
+    "rules": {
+      "R1": "PASS",
+      "R2": "PASS",
+      "R3": "PASS",
+      "R4": "FLAG",
+      "R5": "UNKNOWN"
+    }
+  }
+]

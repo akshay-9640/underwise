@@ -1,0 +1,206 @@
+{
+  "What needs my attention in this packet?": {
+    "question": "What needs my attention in this packet?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "The overall status of the packet is NEEDS_REVIEW.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "Overall status: NEEDS_REVIEW.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "Location count is flagged. The application lists 4 locations, but the schedule has 5. The fifth one, L5 in Princeton, is frame construction.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R2 Location count matches the schedule: FLAG. Declared count 4 differs from the 5 locations on the schedule.",
+            "verified": true
+          },
+          {
+            "source": "locations.csv",
+            "locator": "CSV file",
+            "quote": "L5,8 Fictional Dr,Princeton,NJ,08540,Frame",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "Total insured value is UNKNOWN because the sources conflict. The application shows $11,200,000 and the broker email shows $9,800,000.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "Total insured value conflicts between sources ($11,200,000 in application.pdf, $9,800,000 in broker_email.txt).",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "Sprinkler protection is UNKNOWN because the sources conflict. The application answers No, but the broker email says all four offices are sprinklered.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R4 Sprinkler protection: UNKNOWN. Sprinklered conflicts between sources (No in application.pdf, sprinklered in broker_email.txt).",
+            "verified": true
+          },
+          {
+            "source": "application.pdf",
+            "locator": "PDF page 2",
+            "quote": "Automatic sprinkler system (Yes/No): No",
+            "verified": true
+          },
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "All four offices are sprinklered.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "Loss history is flagged. The loss runs cover only 2 years, and at least 3 are required.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R5 Loss history: FLAG. The loss runs report covers 2 years; at least 3 are required.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The loss runs show one closed claim in 2026, an equipment theft with $8,750 paid.",
+        "citations": [
+          {
+            "source": "loss_runs.pdf",
+            "locator": "PDF page 1",
+            "quote": "2026 | 1 | Theft of equipment | $8,750 | Closed",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The applicant and effective date check passed.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R1 Applicant and effective date: PASS. Business name and requested effective date are present, valid and consistent.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  },
+  "What does the email say about loss runs?": {
+    "question": "What does the email say about loss runs?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "The broker email only says that loss runs are attached, along with the application and the schedule. It gives no other details about them, such as years covered or claims.",
+        "citations": [
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "Application, schedule and loss runs attached.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The attached loss run report covers 2 policy years, 2025 to 2026.",
+        "citations": [
+          {
+            "source": "loss_runs.pdf",
+            "locator": "PDF page 1",
+            "quote": "Experience period: 2 policy years (2025 to 2026)",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The rule check flags the loss history because the report covers fewer years than required.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R5 Loss history: FLAG. The loss runs report covers 2 years; at least 3 are required.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  },
+  "Where does the total insured value come from?": {
+    "question": "Where does the total insured value come from?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "The application gives a total insured value of $11,200,000 for all locations.",
+        "citations": [
+          {
+            "source": "application.pdf",
+            "locator": "PDF page 1",
+            "quote": "Total insured value (all locations): $11,200,000",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The broker email gives a different total insured value of $9,800,000.",
+        "citations": [
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "The group runs dental offices at 4 locations in New Jersey, with a total insured value of $9,800,000.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The rule check marks the total insured value as UNKNOWN because these two sources conflict.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R3 Total insured value within authority: UNKNOWN. Total insured value conflicts between sources ($11,200,000 in application.pdf, $9,800,000 in broker_email.txt).",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The location schedule lists no values for each location, so it can't settle the conflict.",
+        "citations": [
+          {
+            "source": "locations.csv",
+            "locator": "CSV file",
+            "quote": "location_id,address,city,state,zip,construction",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+/* Showcase only: the packet picker on the start screen. Colors and type come from app.css. */
+.picker { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; text-align: left; }
+.packet { display: grid; gap: 8px; align-content: start; font: inherit; color: inherit; text-align: left; cursor: pointer; transition: border-color 140ms ease, transform 100ms ease-out; }
+.packet:hover { border-color: var(--line-strong); }
+.packet:active { transform: scale(0.99); }
+.packet-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.packet-id { font-size: 0.8125rem; font-weight: 600; color: var(--muted); }
+.packet .overall { font-size: 0.8125rem; padding: 3px 12px; }
+.packet-name { font-size: 1.0625rem; font-weight: 700; }
+.packet-tests { color: var(--muted); font-size: 0.875rem; }
+.packet-rules { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.demo-note { margin-top: 18px; text-align: center; }
+.demo-note a { color: var(--navy); }
+@media (prefers-reduced-motion: reduce) { .packet { transition: none; } .packet:active { transform: none; } }

@@ -1,0 +1,63 @@
+# Submission review P1-clean
+
+**Overall: READY_FOR_REVIEW**. Readiness for human review only. This is not a coverage, pricing or binding decision.
+
+Model: claude-code: claude-opus-5-5. Extraction: OK.
+
+## Rules
+
+- **R1 Applicant and effective date: PASS**. Business name and requested effective date are present, valid and consistent.
+- **R2 Location count matches the schedule: PASS**. Declared count 3 equals the 3 locations on the schedule.
+- **R3 Total insured value within authority: PASS**. Total insured value $8,400,000 is within $10,000,000.
+- **R4 Sprinkler protection: PASS**. The applicant explicitly states the buildings are sprinklered.
+- **R5 Loss history: PASS**. A readable loss runs report is attached and covers 5 years (at least 3 required).
+
+## Fields
+
+- **business_name**: Example Harbor Bakery LLC
+  - application.pdf, PDF page 1: "Applicant name: Example Harbor Bakery LLC"
+  - broker_email.txt, email body: "Please find attached a new commercial property submission for Example Harbor Bakery LLC."
+- **requested_effective_date**: 2027-01-01
+  - application.pdf, PDF page 1: "Requested effective date: 01/01/2027"
+  - broker_email.txt, email body: "Requested effective date: January 1, 2027."
+- **property_state**: OH
+  - application.pdf, PDF page 1: "Primary state: Ohio"
+  - broker_email.txt, email body: "operating from 3 locations in Ohio"
+- **occupancy_description**: Commercial bakery with retail storefronts
+  - application.pdf, PDF page 1: "Occupancy: Commercial bakery with retail storefronts"
+  - broker_email.txt, email body: "The insured is a commercial bakery with retail storefronts"
+- **declared_location_count**: 3
+  - application.pdf, PDF page 1: "Number of locations: 3"
+  - broker_email.txt, email body: "operating from 3 locations in Ohio"
+- **total_insured_value**: 8400000
+  - application.pdf, PDF page 1: "Total insured value (all locations): $8,400,000"
+  - broker_email.txt, email body: "Total insured value: $8,400,000."
+- **sprinklered**: True
+  - application.pdf, PDF page 2: "Automatic sprinkler system (Yes/No): Yes"
+  - broker_email.txt, email body: "All buildings are fully sprinklered."
+- **year_built**: 1998
+  - application.pdf, PDF page 2: "Year built (main building): 1998"
+- **loss_history_years**: 5
+  - loss_runs.pdf, PDF page 1: "Experience period: 5 policy years (2022 to 2026)"
+- **loss_runs_present**: True
+  - loss_runs.pdf, PDF page 1: "Loss Run Report"
+  - application.pdf, broker_email.txt, locations.csv, loss_runs.pdf, uploaded attachment inventory: Attachments: application.pdf (application); broker_email.txt (email); locations.csv (csv); loss_runs.pdf (loss_runs)
+- **schedule_location_count**: 3
+  - locations.csv, CSV data rows 1-3 (header excluded): 3 nonblank data rows after the header location_id,address,city,state,zip,construction; location_ids L1, L2, L3
+
+## Underwriter summary (AI)
+
+Example Harbor Bakery LLC is applying for commercial property coverage for a commercial bakery with retail storefronts in OH, with a requested effective date of 2027-01-01. The submission includes application.pdf, broker_email.txt, locations.csv and loss_runs.pdf, which list 3 locations, a total insured value of $8,400,000, sprinklered buildings and a year built of 1998. All five rule checks passed: the applicant and effective date are consistent, the declared 3 locations match the schedule, the total insured value is within the $10,000,000 authority, the buildings are stated to be sprinklered, and the loss runs cover 5 years against the 3 required. No checks were flagged and no fields were corrected by a reviewer. The overall status is READY_FOR_REVIEW, which means only that the submission is ready for human review.
+
+## Draft follow-up email (not sent)
+
+To: Dana Reyes <dana.reyes@example.com>
+Subject: Re: New property submission: Example Harbor Bakery LLC
+
+Hello,
+
+Thank you for the commercial property submission for Example Harbor Bakery LLC. The information we need for our initial review is complete, and we will follow up if anything else is needed.
+
+Thank you,
+[Your name]
+Underwriting

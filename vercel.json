@@ -1,0 +1,7 @@
+{
+  "framework": null,
+  "installCommand": "echo static showcase, nothing to install",
+  "buildCommand": "echo static showcase, nothing to build",
+  "outputDirectory": "showcase",
+  "rewrites": [{ "source": "/api/packets/:id/report", "destination": "/results/:id.report.txt" }]
+}

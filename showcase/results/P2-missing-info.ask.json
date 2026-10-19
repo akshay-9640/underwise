@@ -1,0 +1,164 @@
+{
+  "What needs my attention in this packet?": {
+    "question": "What needs my attention in this packet?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "The packet's overall status is NEEDS_REVIEW.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "Overall status: NEEDS_REVIEW.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "R1 is flagged because the requested effective date is missing. The application says it is to be confirmed, and the broker says the insured has not picked a start date yet.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R1 Applicant and effective date: FLAG. Requested effective date is absent.",
+            "verified": true
+          },
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "The insured is still deciding on a start date, so the effective date is to be confirmed.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "R4 (sprinkler protection) is UNKNOWN because the application leaves the sprinkler question blank.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R4 Sprinkler protection: UNKNOWN. Sprinklered is absent.",
+            "verified": true
+          },
+          {
+            "source": "application.pdf",
+            "locator": "PDF page 2",
+            "quote": "Automatic sprinkler system (Yes/No):",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "R5 (loss history) is flagged because no loss runs are attached. The broker says they will follow next week, but a promise in an email does not satisfy the rule.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R5 Loss history: FLAG. No loss runs report is attached. A promise in the email does not count.",
+            "verified": true
+          },
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "Loss runs have been requested from the current carrier and will follow next week.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "Two checks passed. The location count matches the schedule (R2), and the total insured value of $4,250,000 is within the $10,000,000 authority limit (R3).",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R2 Location count matches the schedule: PASS. Declared count 2 equals the 2 locations on the schedule.",
+            "verified": true
+          },
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R3 Total insured value within authority: PASS. Total insured value $4,250,000 is within $10,000,000.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  },
+  "What does the email say about loss runs?": {
+    "question": "What does the email say about loss runs?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "The broker email says the loss runs were requested from the current carrier and will come next week.",
+        "citations": [
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "Loss runs have been requested from the current carrier and will follow next week.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The rule check flags loss history because no loss runs report is attached, and the promise in the email does not count.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R5 Loss history: FLAG. No loss runs report is attached. A promise in the email does not count.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  },
+  "Where does the total insured value come from?": {
+    "question": "Where does the total insured value come from?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "The total insured value of $4,250,000 comes from Section A of the application, where it is given as one figure for all locations.",
+        "citations": [
+          {
+            "source": "application.pdf",
+            "locator": "PDF page 1",
+            "quote": "Total insured value (all locations): $4,250,000",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The location schedule does not give a value for each location. It only lists the ID, address, city, state, zip and construction type.",
+        "citations": [
+          {
+            "source": "locations.csv",
+            "locator": "CSV file",
+            "quote": "location_id,address,city,state,zip,construction",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The rule check R3 uses this same declared figure and finds it within authority.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R3 Total insured value within authority: PASS. Total insured value $4,250,000 is within $10,000,000.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "What needs my attention in this packet?": {
+    "question": "What needs my attention in this packet?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "All five automated rule checks passed, and the packet's overall status is ready for review. No rule failures need your attention.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "Overall status: READY_FOR_REVIEW.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "Construction is not the same at every location. L2 in Dayton is joisted masonry, while L1 and L3 are masonry noncombustible.",
+        "citations": [
+          {
+            "source": "locations.csv",
+            "locator": "CSV file",
+            "quote": "L2,22 Sample St,Dayton,OH,45402,Joisted masonry",
+            "verified": true
+          },
+          {
+            "source": "locations.csv",
+            "locator": "CSV file",
+            "quote": "L1,100 Example Ave,Columbus,OH,43004,Masonry noncombustible",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The application gives a year built only for the main building. The other locations have no year built in the packet.",
+        "citations": [
+          {
+            "source": "application.pdf",
+            "locator": "PDF page 2",
+            "quote": "Year built (main building): 1998",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The loss runs show one closed claim in five years: a 2024 burst pipe water damage loss paid at $12,300.",
+        "citations": [
+          {
+            "source": "loss_runs.pdf",
+            "locator": "PDF page 1",
+            "quote": "2024 | 1 | Water damage, burst pipe | $12,300 | Closed",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The loss runs are valued as of 09/30/2026, so the last three months of the 2026 policy year are not included.",
+        "citations": [
+          {
+            "source": "loss_runs.pdf",
+            "locator": "PDF page 1",
+            "quote": "Valued as of: 09/30/2026",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The application and the broker email agree on sprinkler protection. The application marks it Yes, and the broker says all buildings are fully sprinklered.",
+        "citations": [
+          {
+            "source": "application.pdf",
+            "locator": "PDF page 2",
+            "quote": "Automatic sprinkler system (Yes/No): Yes",
+            "verified": true
+          },
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "All buildings are fully sprinklered.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The contact details differ slightly. The application lists a generic producer email, but the submission came from Dana Reyes at a different address.",
+        "citations": [
+          {
+            "source": "application.pdf",
+            "locator": "PDF page 1",
+            "quote": "Producer: Example Brokerage, broker@example.com",
+            "verified": true
+          },
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "From: Dana Reyes <dana.reyes@example.com>",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  },
+  "What does the email say about loss runs?": {
+    "question": "What does the email say about loss runs?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "The broker email says five years of loss runs are attached, along with the application and the location schedule.",
+        "citations": [
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "The application, location schedule and five years of loss runs are attached.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The attached loss run report covers 5 policy years, 2022 to 2026, which matches the five years described in the email.",
+        "citations": [
+          {
+            "source": "loss_runs.pdf",
+            "locator": "PDF page 1",
+            "quote": "Experience period: 5 policy years (2022 to 2026)",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The loss history check passed because a readable loss runs report covering 5 years is attached.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R5 Loss history: PASS. A readable loss runs report is attached and covers 5 years (at least 3 required).",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  },
+  "Where does the total insured value come from?": {
+    "question": "Where does the total insured value come from?",
+    "answerable": true,
+    "statements": [
+      {
+        "text": "The total insured value of $8,400,000 is stated in Section A of the application, and it covers all locations.",
+        "citations": [
+          {
+            "source": "application.pdf",
+            "locator": "PDF page 1",
+            "quote": "Total insured value (all locations): $8,400,000",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The broker's cover email gives the same figure.",
+        "citations": [
+          {
+            "source": "broker_email.txt",
+            "locator": "email body",
+            "quote": "Requested effective date: January 1, 2027. Total insured value: $8,400,000.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The location schedule does not give a value for each location, so the total cannot be rebuilt by location from the packet. The schedule only lists address and construction.",
+        "citations": [
+          {
+            "source": "locations.csv",
+            "locator": "CSV file",
+            "quote": "location_id,address,city,state,zip,construction",
+            "verified": true
+          }
+        ],
+        "supported": true
+      },
+      {
+        "text": "The automated check R3 used this $8,400,000 figure and found it within the $10,000,000 authority limit.",
+        "citations": [
+          {
+            "source": "checks",
+            "locator": "check results computed by code",
+            "quote": "R3 Total insured value within authority: PASS. Total insured value $8,400,000 is within $10,000,000.",
+            "verified": true
+          }
+        ],
+        "supported": true
+      }
+    ]
+  }
+}

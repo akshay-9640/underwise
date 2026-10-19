@@ -1,0 +1,418 @@
+{
+  "packet_id": "P4-edge-cases",
+  "created_at": "2026-10-19T16:30:30+00:00",
+  "model": "claude-code: claude-opus-5-5",
+  "attachments": [
+    {
+      "file": "application.pdf",
+      "kind": "pdf",
+      "readable": true,
+      "pages": 2,
+      "doc_type": "application",
+      "doc_type_evidence": {
+        "source_file": "application.pdf",
+        "locator": "PDF page 1",
+        "excerpt_or_observation": "Commercial Property Application",
+        "kind": "excerpt"
+      },
+      "error": null
+    },
+    {
+      "file": "broker_email.txt",
+      "kind": "email",
+      "readable": true,
+      "pages": null,
+      "doc_type": null,
+      "doc_type_evidence": null,
+      "error": null
+    },
+    {
+      "file": "locations.csv",
+      "kind": "csv",
+      "readable": true,
+      "pages": null,
+      "doc_type": null,
+      "doc_type_evidence": null,
+      "error": null
+    },
+    {
+      "file": "loss_runs_scan.pdf",
+      "kind": "pdf",
+      "readable": false,
+      "pages": null,
+      "doc_type": null,
+      "doc_type_evidence": null,
+      "error": "contains no selectable text"
+    }
+  ],
+  "extraction": {
+    "status": "OK",
+    "detail": "Read 2 sources."
+  },
+  "fields": {
+    "business_name": {
+      "name": "business_name",
+      "value": "Example Summit Print Works Inc",
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Applicant name: Example Summit Print Works Inc",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "Requesting a property quote for Example Summit Print Works Inc",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "requested_effective_date": {
+      "name": "requested_effective_date",
+      "value": "2027-03-15",
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Requested effective date: 03/15/2027",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "Requested effective date: March 15, 2027.",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "property_state": {
+      "name": "property_state",
+      "value": "PA",
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Primary state: PA",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "a commercial printing plant in pennsylvania",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "occupancy_description": {
+      "name": "occupancy_description",
+      "value": "Commercial printing plant",
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Occupancy: Commercial printing plant",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "a commercial printing plant in pennsylvania",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "declared_location_count": {
+      "name": "declared_location_count",
+      "value": 1,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Number of locations: 1",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "total_insured_value": {
+      "name": "total_insured_value",
+      "value": 10000000,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Total insured value (all locations): $10,000,000",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "Total insured value is $10 million even.",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "sprinklered": {
+      "name": "sprinklered",
+      "value": false,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 2",
+          "excerpt_or_observation": "Automatic sprinkler system (Yes/No): No",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "year_built": {
+      "name": "year_built",
+      "value": 1962,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 2",
+          "excerpt_or_observation": "Year built (main building): 1962",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "loss_history_years": {
+      "name": "loss_history_years",
+      "value": null,
+      "state": "MISSING",
+      "evidence": [
+        {
+          "source_file": "no readable source that states it",
+          "locator": "uploaded attachment inventory",
+          "excerpt_or_observation": "No value for loss history years is stated in the inspected sources.",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "loss_runs_present": {
+      "name": "loss_runs_present",
+      "value": null,
+      "state": "INVALID",
+      "evidence": [
+        {
+          "source_file": "application.pdf, broker_email.txt, locations.csv, loss_runs_scan.pdf",
+          "locator": "uploaded attachment inventory",
+          "excerpt_or_observation": "Attachments: application.pdf (application); broker_email.txt (email); locations.csv (csv); loss_runs_scan.pdf (unreadable)",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [],
+      "note": "loss_runs_scan.pdf contains no selectable text, so it may be an unreadable loss runs report.",
+      "override": null
+    },
+    "schedule_location_count": {
+      "name": "schedule_location_count",
+      "value": 1,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "locations.csv",
+          "locator": "CSV data rows 1-1 (header excluded)",
+          "excerpt_or_observation": "1 nonblank data row after the header location_id,address,city,state,zip,construction; location_ids L1",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    }
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "name": "Applicant and effective date",
+      "status": "PASS",
+      "reason": "Business name and requested effective date are present, valid and consistent.",
+      "values": {
+        "business_name": {
+          "value": "Example Summit Print Works Inc",
+          "state": "KNOWN",
+          "human_override": false
+        },
+        "requested_effective_date": {
+          "value": "2027-03-15",
+          "state": "KNOWN",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Applicant name: Example Summit Print Works Inc",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "Requesting a property quote for Example Summit Print Works Inc",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Requested effective date: 03/15/2027",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "Requested effective date: March 15, 2027.",
+          "kind": "excerpt"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "name": "Location count matches the schedule",
+      "status": "PASS",
+      "reason": "Declared count 1 equals the 1 locations on the schedule.",
+      "values": {
+        "declared_location_count": {
+          "value": 1,
+          "state": "KNOWN",
+          "human_override": false
+        },
+        "schedule_location_count": {
+          "value": 1,
+          "state": "KNOWN",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Number of locations: 1",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "locations.csv",
+          "locator": "CSV data rows 1-1 (header excluded)",
+          "excerpt_or_observation": "1 nonblank data row after the header location_id,address,city,state,zip,construction; location_ids L1",
+          "kind": "observation"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "name": "Total insured value within authority",
+      "status": "PASS",
+      "reason": "Total insured value $10,000,000 is within $10,000,000.",
+      "values": {
+        "total_insured_value": {
+          "value": 10000000,
+          "state": "KNOWN",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Total insured value (all locations): $10,000,000",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "Total insured value is $10 million even.",
+          "kind": "excerpt"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "name": "Sprinkler protection",
+      "status": "FLAG",
+      "reason": "The applicant explicitly answered No to automatic sprinklers.",
+      "values": {
+        "sprinklered": {
+          "value": false,
+          "state": "KNOWN",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 2",
+          "excerpt_or_observation": "Automatic sprinkler system (Yes/No): No",
+          "kind": "excerpt"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "name": "Loss history",
+      "status": "UNKNOWN",
+      "reason": "loss_runs_scan.pdf contains no selectable text, so it may be an unreadable loss runs report.",
+      "values": {
+        "loss_runs_present": {
+          "value": null,
+          "state": "INVALID",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf, broker_email.txt, locations.csv, loss_runs_scan.pdf",
+          "locator": "uploaded attachment inventory",
+          "excerpt_or_observation": "Attachments: application.pdf (application); broker_email.txt (email); locations.csv (csv); loss_runs_scan.pdf (unreadable)",
+          "kind": "observation"
+        }
+      ]
+    }
+  ],
+  "overall_status": "NEEDS_REVIEW",
+  "summary": {
+    "status": "OK",
+    "detail": "Example Summit Print Works Inc is applying for coverage on 1 commercial printing plant in PA, built in 1962, with a total insured value of $10,000,000 and a requested effective date of 2027-03-15. The submission includes application.pdf, broker_email.txt, locations.csv and loss_runs_scan.pdf. Three checks passed: the applicant name and effective date are present and consistent, the declared count of 1 location matches the schedule, and the $10,000,000 total insured value is within the $10,000,000 authority limit. The sprinkler check was flagged because the applicant answered No to automatic sprinklers. The loss history check is unknown because loss_runs_scan.pdf has no selectable text and may be an unreadable loss runs report, and the number of loss history years is missing, so the submission is marked NEEDS_REVIEW and is ready for human review only."
+  },
+  "email_draft": {
+    "to": "Jordan Kim <jordan.kim@example.com>",
+    "subject": "Re: Example Summit Print Works Inc: property quote request",
+    "body": "Hello,\n\nThank you for the commercial property submission for Example Summit Print Works Inc. Before we can continue our review, please help with the following:\n\n1. The application indicates the buildings are not sprinklered. Please confirm, and describe any other fire protection in place.\n2. loss_runs_scan.pdf contains no selectable text, so it may be an unreadable loss runs report. Please resend any loss runs report as a readable PDF.\n\nThank you,\n[Your name]\nUnderwriting"
+  },
+  "disclaimer": "Readiness for human review only. This is not a coverage, pricing or binding decision."
+}

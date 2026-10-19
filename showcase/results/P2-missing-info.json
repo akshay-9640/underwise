@@ -1,0 +1,421 @@
+{
+  "packet_id": "P2-missing-info",
+  "created_at": "2026-10-19T16:30:30+00:00",
+  "model": "claude-code: claude-opus-5-5",
+  "attachments": [
+    {
+      "file": "application.pdf",
+      "kind": "pdf",
+      "readable": true,
+      "pages": 2,
+      "doc_type": "application",
+      "doc_type_evidence": {
+        "source_file": "application.pdf",
+        "locator": "PDF page 1",
+        "excerpt_or_observation": "Commercial Property Application",
+        "kind": "excerpt"
+      },
+      "error": null
+    },
+    {
+      "file": "broker_email.txt",
+      "kind": "email",
+      "readable": true,
+      "pages": null,
+      "doc_type": null,
+      "doc_type_evidence": null,
+      "error": null
+    },
+    {
+      "file": "locations.csv",
+      "kind": "csv",
+      "readable": true,
+      "pages": null,
+      "doc_type": null,
+      "doc_type_evidence": null,
+      "error": null
+    }
+  ],
+  "extraction": {
+    "status": "OK",
+    "detail": "Read 2 sources."
+  },
+  "fields": {
+    "business_name": {
+      "name": "business_name",
+      "value": "Example Northfield Storage Inc",
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Applicant name: Example Northfield Storage Inc",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "Attached is the application and location schedule for Example Northfield Storage Inc",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "requested_effective_date": {
+      "name": "requested_effective_date",
+      "value": null,
+      "state": "MISSING",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Requested effective date: To be confirmed",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "The insured is still deciding on a start date, so the effective date is to be confirmed.",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "application.pdf, broker_email.txt",
+          "locator": "application.pdf PDF pages 1-2; broker_email.txt email body",
+          "excerpt_or_observation": "No value for requested effective date is stated in the inspected sources.",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "property_state": {
+      "name": "property_state",
+      "value": "MI",
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Primary state: Michigan",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "which rents self-storage warehouse units in Michigan",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "occupancy_description": {
+      "name": "occupancy_description",
+      "value": "Self-storage warehouse units",
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Occupancy: Self-storage warehouse units",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "which rents self-storage warehouse units in Michigan",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "declared_location_count": {
+      "name": "declared_location_count",
+      "value": 2,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Number of locations: 2",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "total_insured_value": {
+      "name": "total_insured_value",
+      "value": 4250000,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Total insured value (all locations): $4,250,000",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "sprinklered": {
+      "name": "sprinklered",
+      "value": null,
+      "state": "MISSING",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 2",
+          "excerpt_or_observation": "Automatic sprinkler system (Yes/No):",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "application.pdf, broker_email.txt",
+          "locator": "application.pdf PDF pages 1-2; broker_email.txt email body",
+          "excerpt_or_observation": "No value for sprinklered is stated in the inspected sources.",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "year_built": {
+      "name": "year_built",
+      "value": 1987,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 2",
+          "excerpt_or_observation": "Year built (main building): 1987",
+          "kind": "excerpt"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "loss_history_years": {
+      "name": "loss_history_years",
+      "value": null,
+      "state": "MISSING",
+      "evidence": [
+        {
+          "source_file": "no readable source that states it",
+          "locator": "uploaded attachment inventory",
+          "excerpt_or_observation": "No value for loss history years is stated in the inspected sources.",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "loss_runs_present": {
+      "name": "loss_runs_present",
+      "value": false,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "application.pdf, broker_email.txt, locations.csv",
+          "locator": "uploaded attachment inventory",
+          "excerpt_or_observation": "Attachments: application.pdf (application); broker_email.txt (email); locations.csv (csv)",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    },
+    "schedule_location_count": {
+      "name": "schedule_location_count",
+      "value": 2,
+      "state": "KNOWN",
+      "evidence": [
+        {
+          "source_file": "locations.csv",
+          "locator": "CSV data rows 1-2 (header excluded)",
+          "excerpt_or_observation": "2 nonblank data rows after the header location_id,address,city,state,zip,construction; location_ids L1, L2",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [],
+      "note": null,
+      "override": null
+    }
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "name": "Applicant and effective date",
+      "status": "FLAG",
+      "reason": "Requested effective date is absent.",
+      "values": {
+        "business_name": {
+          "value": "Example Northfield Storage Inc",
+          "state": "KNOWN",
+          "human_override": false
+        },
+        "requested_effective_date": {
+          "value": null,
+          "state": "MISSING",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Applicant name: Example Northfield Storage Inc",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "Attached is the application and location schedule for Example Northfield Storage Inc",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Requested effective date: To be confirmed",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "broker_email.txt",
+          "locator": "email body",
+          "excerpt_or_observation": "The insured is still deciding on a start date, so the effective date is to be confirmed.",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "application.pdf, broker_email.txt",
+          "locator": "application.pdf PDF pages 1-2; broker_email.txt email body",
+          "excerpt_or_observation": "No value for requested effective date is stated in the inspected sources.",
+          "kind": "observation"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "name": "Location count matches the schedule",
+      "status": "PASS",
+      "reason": "Declared count 2 equals the 2 locations on the schedule.",
+      "values": {
+        "declared_location_count": {
+          "value": 2,
+          "state": "KNOWN",
+          "human_override": false
+        },
+        "schedule_location_count": {
+          "value": 2,
+          "state": "KNOWN",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Number of locations: 2",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "locations.csv",
+          "locator": "CSV data rows 1-2 (header excluded)",
+          "excerpt_or_observation": "2 nonblank data rows after the header location_id,address,city,state,zip,construction; location_ids L1, L2",
+          "kind": "observation"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "name": "Total insured value within authority",
+      "status": "PASS",
+      "reason": "Total insured value $4,250,000 is within $10,000,000.",
+      "values": {
+        "total_insured_value": {
+          "value": 4250000,
+          "state": "KNOWN",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 1",
+          "excerpt_or_observation": "Total insured value (all locations): $4,250,000",
+          "kind": "excerpt"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "name": "Sprinkler protection",
+      "status": "UNKNOWN",
+      "reason": "Sprinklered is absent.",
+      "values": {
+        "sprinklered": {
+          "value": null,
+          "state": "MISSING",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf",
+          "locator": "PDF page 2",
+          "excerpt_or_observation": "Automatic sprinkler system (Yes/No):",
+          "kind": "excerpt"
+        },
+        {
+          "source_file": "application.pdf, broker_email.txt",
+          "locator": "application.pdf PDF pages 1-2; broker_email.txt email body",
+          "excerpt_or_observation": "No value for sprinklered is stated in the inspected sources.",
+          "kind": "observation"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "name": "Loss history",
+      "status": "FLAG",
+      "reason": "No loss runs report is attached. A promise in the email does not count.",
+      "values": {
+        "loss_runs_present": {
+          "value": false,
+          "state": "KNOWN",
+          "human_override": false
+        }
+      },
+      "evidence": [
+        {
+          "source_file": "application.pdf, broker_email.txt, locations.csv",
+          "locator": "uploaded attachment inventory",
+          "excerpt_or_observation": "Attachments: application.pdf (application); broker_email.txt (email); locations.csv (csv)",
+          "kind": "observation"
+        }
+      ]
+    }
+  ],
+  "overall_status": "NEEDS_REVIEW",
+  "summary": {
+    "status": "OK",
+    "detail": "Example Northfield Storage Inc is applying for commercial property coverage for self-storage warehouse units in MI, with 2 declared locations, a total insured value of $4,250,000, and a year built of 1987. The submission includes application.pdf, broker_email.txt and locations.csv. Two checks passed: the declared location count of 2 matches the 2 locations on the schedule, and the total insured value is within the $10,000,000 authority. The underwriter should look at three items: the requested effective date is missing, sprinkler protection could not be assessed because the sprinklered field is missing, and no loss runs report is attached (a promise in the email does not count). The overall status is NEEDS_REVIEW, which means the submission is ready for human review only."
+  },
+  "email_draft": {
+    "to": "Sam Patel <sam.patel@example.com>",
+    "subject": "Re: Submission: Example Northfield Storage Inc",
+    "body": "Hello,\n\nThank you for the commercial property submission for Example Northfield Storage Inc. Before we can continue our review, please help with the following:\n\n1. Please provide the requested effective date.\n2. Please confirm whether the buildings have automatic sprinklers (Yes or No).\n3. Please send loss runs covering at least the last 3 years. They were not attached to this submission.\n\nThank you,\n[Your name]\nUnderwriting"
+  },
+  "disclaimer": "Readiness for human review only. This is not a coverage, pricing or binding decision."
+}
